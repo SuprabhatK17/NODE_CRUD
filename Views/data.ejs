@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <div class="container">
+        <table class="table table-border table-bordered text-center shadow">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Password</th>
+                <th>User Delete</th>
+                <th>User Update</th>
+            </tr>
+
+            <% users.forEach(function(user){ %>
+            <tr>
+                <td><%=user._id %></td>
+                <td><%=user.name %></td>
+                <td><%=user.email %></td>
+                <td><%=user.password %></td>
+                <td><a href = "/delete/<%=user._id %>" class="btn btn-danger" >DELETE</a></td>
+                <td><a href="/update/<%=user._id %>" class="btn btn-info">UPDATE</a></td>
+            </tr>
+            
+            <% }) %>
+
+        </table>
+    </div>
+</body>
+</html>
